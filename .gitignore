@@ -1,3 +1,4 @@
+# slides
 main.aux
 main.log
 main.nav
@@ -6,3 +7,10 @@ main.pdf
 main.snm
 main.toc
 main.vrb
+
+# solution
+bin/
+obj/
+.idea/
+*~
+*.DotSettings.user
