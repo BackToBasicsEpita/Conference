@@ -1,0 +1,55 @@
+\mode<presentation>
+\usepackage[skins]{tcolorbox}
+\usepackage{cabin}
+\usepackage[T1]{fontenc}
+
+\setbeamertemplate{background}{
+  \begin{tikzpicture}
+  \ifnum\thepage>1%
+       \fill[white,opacity=1] (0,0) rectangle(\paperwidth,\paperheight);
+   \else
+       \path[fill overzoom image=img/b2b_bg] (0,0) rectangle (\paperwidth+1,\paperheight+1);
+   \fi
+  \end{tikzpicture}
+}
+
+% Title page
+\defbeamertemplate*{title page}{b2b}[1][]
+{ 
+   \vskip2cm%
+    \begin{beamercolorbox}[wd=12cm,leftskip=1cm,sep=8pt,#1]{title page header}
+      \includegraphics[height=1.5cm]{img/b2b_v2.png}
+      \begin{tikzpicture}
+          \node[anchor=center] {\Huge\textbf{\inserttitle}};%
+      \end{tikzpicture}
+    \end{beamercolorbox}%
+    \vskip0.75cm%
+    \begin{beamercolorbox}[wd=12cm,leftskip=3cm,#1]{author}
+      \usebeamerfont{author}\insertauthor%
+    \end{beamercolorbox}
+     \vskip0.2cm%
+    \begin{beamercolorbox}[wd=12cm,leftskip=3cm,#1]{date}
+      \usebeamerfont{author}\insertdate%
+    \end{beamercolorbox}
+  \vfill
+}
+
+\defbeamertemplate*{section page}{b2b}[1][]
+{ 
+    \vskip2.5cm
+    \begin{center}
+      \Huge\textbf{\underline{\insertsectionhead}}
+    \end{center}
+    \vfill
+}
+
+\AtBeginSection{
+\ifbeamer@inframe
+  \sectionpage
+\else
+  \frame[plain,c,noframenumbering]{\sectionpage}
+\fi
+}
+
+\mode
+<all>

@@ -1,0 +1,21 @@
+\mode<presentation>
+
+% Frame title
+\defbeamertemplate*{frametitle}{b2b}[1][]
+{
+  \begin{beamercolorbox}[wd=\paperwidth,ht=1.2cm]{frametitle} 
+  \begin{tikzpicture}
+   \path[fill overzoom image=img/b2b_bg] (0,-0.1) rectangle (\paperwidth+1,1.3);
+   \ifx\insertsubsectionhead\@empty%
+      {\node[anchor=west, white,font=\large] at (0.2,0.51){\insertsectionhead};}
+      \else%
+      {\node[anchor= west, white,font=\large] at (0.2,0.66){\insertsectionhead};%
+       \node[anchor= west, white,font=\footnotesize] at (0.2,0.21){\insertsubsectionhead};}%
+      \fi
+
+      \node[anchor=east] at (\paperwidth,0.53){\includegraphics[height=0.8cm]{img/b2b.png}};
+  \end{tikzpicture}
+  \end{beamercolorbox}
+}
+
+\mode<all>
